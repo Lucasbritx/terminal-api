@@ -20,7 +20,7 @@ app.get('/', (req, res) => {
 app.post("/exec", (req, res) => {
   const { command = "" } = req.body;
 
-  const allowedCommands = ["ls", "pwd", "whoami", "echo"];
+  const allowedCommands = ["ls", "pwd", "whoami", "echo", "mkdir"];
   if (!allowedCommands.includes(command.split(" ")[0])) {
     return res.status(400).json({ error: "Comando não permitido" });
   }
